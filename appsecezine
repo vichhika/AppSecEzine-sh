@@ -1,0 +1,38 @@
+#!/bin/bash
+
+if [ "$1" == "-h" ] || [ "$1" == "--help" ] || [ $# -eq 0 ]; then
+    echo "Usage: $0 [OPTIONS]"
+    echo "  -h, --help                 Show this help"
+    echo "  -e, --episode <number>     View content by episode number"
+    echo "  -l, --list                 List all episodes"
+    echo "  -u, --update               Update the database"
+    echo "Example:$0 -e 168"
+    echo "Example:$0 -l"
+    echo "Example:$0 -u"
+fi
+
+if [ "$1" == "-u" ] || [ "$1" == "--update" ] ; then
+    repo="https://github.com/Simpsonpt/AppSecEzine"
+    echo "[+] fetching data..."
+    if [ ! -d "AppSecEzine" ]
+    then
+        git clone $repo > /dev/null 2>&1
+    else
+        cd AppSecEzine
+        git pull > /dev/null 2>&1
+    fi
+fi
+
+if [ "$1" == "-l" ] || [ "$1" == "--list" ]; then
+    find . | egrep -o "[0-9]+ - .*" | sort -n
+fi
+
+if [ "$1" == "-e" ] || [ "$1" == "--episode" ] && [ $# -eq 2 ]; then
+    if [[ $(find . -name "$2 - *" -exec cat {} \; 2>/dev/null) ]]; then
+        find . -name "$2 - *" -exec cat {} \; 2>/dev/null
+    else
+        echo "[+] episode not found"
+    fi
+fi
+
+exit 1
