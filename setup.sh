@@ -10,5 +10,5 @@ echo "[+] Installing..."
 git clone "https://github.com/vichhika/AppSecEzine-sh" > /dev/null 2>&1
 cd AppSecEzine-sh
 git pull
-ln -s $(pwd)/AppSecEzine-sh/appseczine /usr/share/appseczine
+ln -s $(pwd)/AppSecEzine-sh/appseczine /usr/bin/appseczine
 echo "[+] installation done."
