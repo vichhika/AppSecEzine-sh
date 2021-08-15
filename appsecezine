@@ -9,6 +9,7 @@ if [ "$1" == "-h" ] || [ "$1" == "--help" ] || [ $# -eq 0 ]; then
     echo "Example:$0 -e 168"
     echo "Example:$0 -l"
     echo "Example:$0 -u"
+    pwd
 fi
 
 if [ "$1" == "-u" ] || [ "$1" == "--update" ] ; then

@@ -6,6 +6,6 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 echo "[+] Uninstalling..."
-rm /usr/bin/appseczine 2>/dev/null
+rm /usr/bin/appsecezine 2>/dev/null
 rm -rf /usr/share/AppSecEzine-sh 2> /dev/null
 echo "[+] Done."
