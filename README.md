@@ -29,9 +29,7 @@ Example:/usr/bin/appsecezine -l
 Example:/usr/bin/appsecezine -u
 
 ```
-## Installation
-
-Method 1:
+## Uninstallation
 
 ```bash
 wget https://raw.githubusercontent.com/vichhika/AppSecEzine-sh/main/uninstall.sh && sudo sh uninstall.sh && rm -rf uninstall.sh
