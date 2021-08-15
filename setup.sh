@@ -7,6 +7,8 @@ fi
 
 cd /usr/share
 echo "[+] Installing..."
-git clone "https://github.com/vichhika/AppSecEzine-sh" > /dev/null 2>&1 && cd AppSecEzine-sh && git pull
+git clone "https://github.com/vichhika/AppSecEzine-sh" > /dev/null 2>&1
+cd AppSecEzine-sh
+git pull
 ln -s $(pwd)/AppSecEzine-sh/appseczine /usr/share/appseczine
 echo "[+] installation done."
