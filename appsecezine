@@ -9,9 +9,10 @@ if [ "$1" == "-h" ] || [ "$1" == "--help" ] || [ $# -eq 0 ]; then
     echo "Example:$0 -e 168"
     echo "Example:$0 -l"
     echo "Example:$0 -u"
-    pwd
+    exit 1
 fi
 
+cd /usr/share/AppSecEzine-sh
 if [ "$1" == "-u" ] || [ "$1" == "--update" ] ; then
     repo="https://github.com/Simpsonpt/AppSecEzine"
     echo "[+] fetching data..."
