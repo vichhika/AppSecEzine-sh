@@ -14,6 +14,10 @@ fi
 
 cd /usr/share/AppSecEzine-sh
 if [ "$1" == "-u" ] || [ "$1" == "--update" ] ; then
+    if [[ $EUID -ne 0 ]]; then
+        echo "[+] update must be run as root"
+        exit 1
+    fi
     repo="https://github.com/Simpsonpt/AppSecEzine"
     echo "[+] fetching data..."
     if [ ! -d "AppSecEzine" ]
@@ -23,10 +27,12 @@ if [ "$1" == "-u" ] || [ "$1" == "--update" ] ; then
         cd AppSecEzine
         git pull > /dev/null 2>&1
     fi
+    exit 1
 fi
 
 if [ "$1" == "-l" ] || [ "$1" == "--list" ]; then
     find . | egrep -o "[0-9]+ - .*" | sort -n
+    exit 1
 fi
 
 if [ "$1" == "-e" ] || [ "$1" == "--episode" ] && [ $# -eq 2 ]; then
@@ -35,6 +41,5 @@ if [ "$1" == "-e" ] || [ "$1" == "--episode" ] && [ $# -eq 2 ]; then
     else
         echo "[+] episode not found"
     fi
+    exit 1
 fi
-
-exit 1
