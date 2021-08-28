@@ -4,15 +4,8 @@ AppSecEzine-sh is a bash scripting for reading AppSecEzine articles from the com
 
 ## Installation
 
-Method 1:
-
 ```bash
 wget https://raw.githubusercontent.com/vichhika/AppSecEzine-sh/main/setup.sh && sudo sh setup.sh && rm -rf setup.sh
-```
-Method 2:
-
-```bash
-git clone git@github.com:vichhika/AppSecEzine-sh.git && cd AppSecEzine-sh && sudo sh setup.sh
 ```
 
 ## Usage
