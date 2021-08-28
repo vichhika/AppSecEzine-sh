@@ -1,6 +1,6 @@
 # AppSecEzine-sh
 
-AppSecEzine-sh is a bash scripting for reading AppSecEzine articles from the command line.
+AppSecEzine-sh is simple script that created for reading AppSecEzine articles from the command line purpose.
 
 ## Installation
 
